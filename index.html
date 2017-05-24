@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en_US" manifest="yeast.appcache">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Yeast Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- <link rel="apple-touch-icon" href="http://www.hboaventura.com/yeast/apple-touch-icon.png"> -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="css/main.min.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+
+        <div id="container">
+          <h1>Yeast Calculator</h1>
+          <form action="">
+            <fieldset>
+              <legend>Wort Properties</legend>
+              <div class="wrapper">
+                <label for="type_fermentation">Type of Fermentation</label>
+                <select name="type_fermentation" id="type_fermentation" class="fields">
+                  <option value="ale">Ale</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="lager">Lager</option>
+                </select>
+                <label for="batch_volume">Batch Volume [liters]</label>
+                <input type="number" name="batch_volume" id="batch_volume" value="20" class="fields" />
+                <label for="original_gravity">Original Gravity [SG]</label>
+                <input type="number" name="original_gravity" id="original_gravity" value="1.050" class="fields" />
+                <label for="optimal_pitching_rate">Optimal Pitching Rate [millions/ml]</label>
+                <input type="number" name="optimal_pitching_rate" id="optimal_pitching_rate" class="fields" readonly disabled/>
+                <label for="yeast_cells_needed">Yeast Cells Needed [Billions]</label>
+                <input type="number" name="yeast_cells_needed" id="yeast_cells_needed" class="fields" readonly disabled/>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Yeast Properties</legend>
+              <div class="wrapper">
+                <label for="initial_cell_count">Initial Cell Count [billions]</label>
+                <input type="number" name="initial_cell_count" id="initial_cell_count" value="100" class="fields" />
+                <label for="viability">Viability %</label>
+                <input type="number" name="viability" id="viability" value="97" class="fields" max="100" min="0" />
+                <label for="viable_cell_count">Viable Cell Count [billions]</label>
+                <input type="number" name="viable_cell_count" id="viable_cell_count" class="fields" readonly disabled/>
+              </div>
+            </fieldset>
+            <fieldset data-step="1">
+              <legend>1st Step</legend>
+              <div class="wrapper">
+                <label for="starter_volume_1">Starter Volume [liters]</label>
+                <input type="number" name="starter_volume_1" id="starter_volume_1" value="1" class="fields trigger" />
+                <label for="starter_gravity_1">Starter Gravity [sg]</label>
+                <input type="number" name="starter_gravity_1" id="starter_gravity_1" value="1.037" class="fields trigger" />
+                <label for="new_cells_created_1">New Cells Created [billions]</label>
+                <input type="number" name="new_cells_created_1" id="new_cells_created_1" value="" class="fields" readonly disabled/>
+                <label for="total_cells_at_finish_1">Total Cells at Finish [billions]</label>
+                <input type="number" name="total_cells_at_finish_1" id="total_cells_at_finish_1" class="fields" readonly disabled/>
+                <label for="growth_factor_1">Growth Factor</label>
+                <input type="number" name="growth_factor_1" id="growth_factor_1" class="fields" readonly disabled/>
+              </div>
+            </fieldset>
+
+            <fieldset data-step="2" class="start_hidden">
+              <legend class="closed">2st Step</legend>
+              <div class="wrapper">
+                <label for="starter_volume_2">Starter Volume [liters]</label>
+                <input type="number" name="starter_volume_2" id="starter_volume_2" value="0" class="fields trigger" />
+                <label for="starter_gravity_2">Starter Gravity [sg]</label>
+                <input type="number" name="starter_gravity_2" id="starter_gravity_2" value="1.037" class="fields trigger" />
+                <label for="new_cells_created_2">New Cells Created [billions]</label>
+                <input type="number" name="new_cells_created_2" id="new_cells_created_2" value="" class="fields" readonly disabled/>
+                <label for="total_cells_at_finish_2">Total Cells at Finish [billions]</label>
+                <input type="number" name="total_cells_at_finish_2" id="total_cells_at_finish_2" class="fields" readonly disabled/>
+                <label for="growth_factor_2">Growth Factor</label>
+                <input type="number" name="growth_factor_2" id="growth_factor_2" class="fields" readonly disabled/>
+              </div>
+            </fieldset>
+
+            <fieldset data-step="3" class="start_hidden">
+              <legend class="closed">3st Step</legend>
+              <div class="wrapper">
+                <label for="starter_volume_3">Starter Volume [liters]</label>
+                <input type="number" name="starter_volume_3" id="starter_volume_3" value="0" class="fields trigger" />
+                <label for="starter_gravity_3">Starter Gravity [sg]</label>
+                <input type="number" name="starter_gravity_3" id="starter_gravity_3" value="1.037" class="fields trigger" />
+                <label for="new_cells_created_3">New Cells Created [billions]</label>
+                <input type="number" name="new_cells_created_3" id="new_cells_created_3" value="" class="fields" readonly disabled/>
+                <label for="total_cells_at_finish_3">Total Cells at Finish [billions]</label>
+                <input type="number" name="total_cells_at_finish_3" id="total_cells_at_finish_3" class="fields" readonly disabled/>
+                <label for="growth_factor_3">Growth Factor</label>
+                <input type="number" name="growth_factor_3" id="growth_factor_3" class="fields" readonly disabled/>
+              </div>
+            </fieldset>
+          </form>
+
+          <footer>
+            <p>by Henrique Boaventura & Estevão Chittó, using the <a href="http://braukaiser.com/blog/blog/2012/11/03/estimating-yeast-growth/">Braukaiser</a> yeast growth formula. <br/>This calculator is only for starters made with stir plates.</p>
+          </footer>
+        </div>
+
+        <script src="js/vendor/zepto.min.js"></script>
+        <script src="js/main.min.js"></script>
+    </body>
+</html>

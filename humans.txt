@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Henrique Boaventura -- Developer -- @kidh0
+    Estevão Chittó -- Developer -- @echitto
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, Zepto, Normalize.css
