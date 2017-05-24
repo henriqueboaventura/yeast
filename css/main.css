@@ -131,7 +131,6 @@ legend {
   cursor: pointer;
   display: block;
   font-size:1.2em;
-  margin-left: -15px;
 }
 legend::after {
   content: ' ▲';
